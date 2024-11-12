@@ -15,7 +15,7 @@ pipeline {
         stage('HTML Validation') {
             steps {
                 echo 'Running HTML Validation...'
-                sh 'echo "HTML issues detected!"'
+                bat 'echo HTML issues detected!'
             }
         }
     }
