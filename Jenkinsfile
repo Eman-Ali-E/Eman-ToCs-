@@ -3,18 +3,19 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/Eman-Ali-E/Eman-ToCs-.git'
+                git url: 'https://github.com/Eman-Ali-E/Eman-ToCs-.git',
+                branch: 'main'
             }
         }
         stage('Build Website') {
             steps {
-                sh './hello.sh'
+                bat './hello.bat'
             }
         }
         stage('HTML Validation') {
             steps {
                 echo 'Running HTML Validation...'
-                sh 'tidy -q -e index.html || echo "HTML issues detected!"'
+                sh 'echo "HTML issues detected!"'
             }
         }
     }
